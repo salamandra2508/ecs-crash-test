@@ -6,8 +6,6 @@ COPY  . .
 RUN apt update -y && apt -y install curl && curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt -y install nodejs && node -v
 RUN npm cache clean --force && npm install --only=prod
 
-ARG ENV_NAME=$ENV_NAME
-ARG NODE_ENV=$NODE_ENV
 
 EXPOSE 80
 
