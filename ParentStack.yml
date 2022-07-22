@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: 'BlueGreen deployments architecture, version 1.0'
+Resources:
+  vstackname:
+    Type: AWS::CloudFormation::Stack
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      TemplateURL: '{{resolve:ssm:TemplateURL}}'
+      Parameters:
+        PKServerVersion: '<<packageversion>>'
+        EnvName: 'envname'
