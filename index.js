@@ -68,10 +68,18 @@ app.use(function(req, res) {
 });
 
 
+(async () => {
+    await delay();
+    app.listen(3000, () => {
+        console.log('listening on port 3000');
+    })
+})()
 
-app.listen(3000, () => {
-    console.log('listening on port 3000');
-})
+
+function delay(ms = 3000) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 
 
 
