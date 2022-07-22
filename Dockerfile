@@ -8,5 +8,6 @@ RUN npm cache clean --force && npm install --only=prod
 
 
 EXPOSE 80
+EXPOSE 3000
 
 CMD  ["npm", "run", "start_container"]
